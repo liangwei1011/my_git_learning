@@ -7,14 +7,29 @@
 </head>
 <body>
 <div id="app">
-  <p>{{ message }}</p>
+	<p>{{ message }}</p>
+	<div>
+		<select v-model="selectedImage">
+			<template v-for="img in images">
+				<option v-bind:value="img">{{img}}</option>
+			</template>
+		</select>
+		<template v-for="img in images">
+			<input type="radio" v-bind:id="img" v-bind:value="img" v-model="selectedImage"><label v-bind:for="img">{{img}}</label>
+		</template>
+	</div>
+	<div>
+		<image v-bind:src="'static/images/'+selectedImage+'.jpg'" />
+	</div>
 </div>
 
 <script>
 new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue.js!'
+    message: 'Hello Vue.js!',
+	images:['F15','J20','C17'],
+	selectedImage:'F15'
   }
 })
 </script>
