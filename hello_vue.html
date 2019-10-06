@@ -19,7 +19,7 @@
 		</template>
 	</div>
 	<div>
-		<image v-bind:src="'static/images/'+selectedImage+'.jpg'" />
+		<image style="height: 600px;" v-bind:src="'static/images/'+selectedImage+'.jpg'" />
 	</div>
 </div>
 
@@ -28,7 +28,7 @@ new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue.js!',
-	images:['F15','J20','C17'],
+	images:['F15','J20','C17','F22'],
 	selectedImage:'F15'
   }
 })
